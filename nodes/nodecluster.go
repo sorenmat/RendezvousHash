@@ -1,6 +1,6 @@
 package nodes
 
-import "RendezvousHash/hashing"
+import "github.com/sorenmat/RendezvousHash/hashing"
 
 type Node struct {
 	id string
