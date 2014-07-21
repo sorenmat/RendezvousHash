@@ -1,4 +1,4 @@
-package hashing
+package main
 
 import (
 	"github.com/spaolacci/murmur3"

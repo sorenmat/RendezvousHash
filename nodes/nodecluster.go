@@ -1,5 +1,7 @@
 package nodes
 
+import "RendezvousHash/hashing"
+
 type Node struct {
 	id string
 }
@@ -45,7 +47,7 @@ func (cluster *NodeCluster) whichNodeToPutKey(key string) string {
 	var maxValue uint64 = 0
 	var max string
 	for i := 0; i < len(orderedNodes); i++ {
-		var nodeHash = toHash(key, orderedNodes[i].id)
+		var nodeHash = hashing.ToHash(key, orderedNodes[i].id)
 		if nodeHash > maxValue {
 			max = orderedNodes[i].id
 			maxValue = nodeHash

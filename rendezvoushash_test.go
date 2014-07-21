@@ -1,4 +1,4 @@
-package hashing
+package main
 
 import "testing"
 import "fmt"

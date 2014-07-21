@@ -2,7 +2,6 @@ package nodes
 
 import "testing"
 
-
 /**
 	Ensure that if we get a key, and removes a node, and re-add that node, we get the same.
 */

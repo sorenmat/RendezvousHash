@@ -5,7 +5,7 @@ import (
 )
 
 
-func toHash(value ...string) uint64 {
+func ToHash(value ...string) uint64 {
 	hasher := murmur3.New64()
 	for _, v := range value {
     	hasher.Write([]byte(v))
