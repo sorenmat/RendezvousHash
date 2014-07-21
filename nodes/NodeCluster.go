@@ -35,6 +35,24 @@ func (cluster *NodeCluster) removeNode(node *Node) {
 	cluster.nodes = arr
 }
 
+/**
+	Find the node that is responsible for the key.
+	This is done by iterating over all the known nodes, and hashing the key with the id on the current node. The combination
+	if the hashed key + hashed id with the highest number is the node we choose.
+*/
+func (cluster *NodeCluster) whichNodeToPutKey(key string) string {
+	orderedNodes := cluster.nodes
+	var maxValue uint64 = 0
+	var max string
+	for i := 0; i < len(orderedNodes); i++ {
+		var nodeHash = toHash(key, orderedNodes[i].id)
+		if nodeHash > maxValue {
+			max = orderedNodes[i].id
+			maxValue = nodeHash
+		}
+	}
+	return max
+}
 
 func (cluster *NodeCluster) getNodes() []Node {
 	return cluster.nodes
