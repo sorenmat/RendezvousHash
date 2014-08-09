@@ -4,7 +4,7 @@ import "testing"
 import "fmt"
 
 /**
-	Ensure that if we get a key, and removes a node, and re-add that node, we get the same.
+Ensure that if we get a key, and removes a node, and re-add that node, we get the same.
 */
 func TestReAddingNodes(t *testing.T) {
 	var nodes []string
@@ -21,22 +21,23 @@ func TestReAddingNodes(t *testing.T) {
 }
 
 /**
-	Getting a key from an empty node list, should fail
+Getting a key from an empty node list, should fail
 */
 func TestGetAndEmptyNode(t *testing.T) {
-	var nodes[] string
+	var nodes []string
 	if whichNodeOwnsKey("key", nodes) != "" {
 		t.Error("Got an non empty node")
 	}
+
 }
 
-
 func TestGetNode(t *testing.T) {
-	var nodes[] string
+	var nodes []string
 	nodes = addNode("node1", nodes)
 	nodes = addNode("node2", nodes)
 
 	var myNode = whichNodeOwnsKey("key", nodes)
 
 	fmt.Println(myNode)
+
 }
